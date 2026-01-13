@@ -98,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
+API_URL = 'https://jsonplaceholder.typicode.com/posts'
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
