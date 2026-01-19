@@ -121,16 +121,21 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
+# settings.py
+# settings.py
 
-STATIC_URL = "static/"
+# 1. Carpeta física donde están tus archivos (según tu imagen image_24d97b.png)
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, STATIC_URL),
+    BASE_DIR / 'static', 
 ]
-STATIC_ROOT = BASE_DIR / 'assets'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# 2. Carpeta donde Railway guardará todo tras el collectstatic
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATIC_URL = 'static/'
+
+# 3. Almacenamiento optimizado para WhiteNoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 CSRF_TRUSTED_ORIGINS = [
   "https://*.up.railway.app",
