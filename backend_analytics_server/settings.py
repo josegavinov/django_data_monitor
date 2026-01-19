@@ -124,17 +124,11 @@ USE_TZ = True
 # settings.py
 # settings.py
 
-# 1. Carpeta física donde están tus archivos (según tu imagen image_24d97b.png)
-STATICFILES_DIRS = [
-    BASE_DIR / 'templates', 
-]
-
-# 2. Carpeta donde Railway guardará todo tras el collectstatic
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static'] # Donde está tu tailwind.output.css
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Donde Railway lo guardará
 
-# 3. Almacenamiento optimizado para WhiteNoise
+# 3. Almacenamiento
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 CSRF_TRUSTED_ORIGINS = [
