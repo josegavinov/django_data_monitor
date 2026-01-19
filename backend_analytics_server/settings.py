@@ -126,7 +126,7 @@ USE_TZ = True
 
 # 1. Carpeta física donde están tus archivos (según tu imagen image_24d97b.png)
 STATICFILES_DIRS = [
-    BASE_DIR / 'static', 
+    BASE_DIR / 'templates', 
 ]
 
 # 2. Carpeta donde Railway guardará todo tras el collectstatic
