@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Agregar WhiteNoise al middleware (debe ir después de SecurityMiddleware)
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # Agregar WhiteNoise al middleware (debe ir después de SecurityMiddleware)
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -121,17 +121,16 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
+# settings.py
+# settings.py
 
-STATIC_URL = "static/"
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, STATIC_URL),
-]
-STATIC_ROOT = BASE_DIR / 'assets'
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static'] # Donde está tu tailwind.output.css
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Donde Railway lo guardará
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+# 3. Almacenamiento
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+WHITENOISE_MANIFEST_STRICT = False
 CSRF_TRUSTED_ORIGINS = [
   "https://*.up.railway.app",
   "https://*.app.github.dev", # Solo si utiliza Codespaces
