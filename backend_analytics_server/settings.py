@@ -130,7 +130,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # Donde Railway lo guardará
 
 # 3. Almacenamiento
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
+WHITENOISE_MANIFEST_STRICT = False
 CSRF_TRUSTED_ORIGINS = [
   "https://*.up.railway.app",
   "https://*.app.github.dev", # Solo si utiliza Codespaces
